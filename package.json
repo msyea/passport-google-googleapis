@@ -1,0 +1,19 @@
+{
+  "name": "passport-google-googleapis",
+  "version": "1.0.0",
+  "description": "Implementation of Google's OAuth Connect endpoints for PassportJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msyea/passport-google-googleapis.git"
+  },
+  "author": "Simon Mayes <simon@msyea.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/msyea/passport-google-googleapis/issues"
+  },
+  "homepage": "https://github.com/msyea/passport-google-googleapis"
+}
