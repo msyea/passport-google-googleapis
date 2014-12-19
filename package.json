@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/msyea/passport-google-googleapis/issues"
   },
-  "homepage": "https://github.com/msyea/passport-google-googleapis"
+  "homepage": "https://github.com/msyea/passport-google-googleapis",
+  "dependencies": {
+    "googleapis": "^1.0.21"
+  }
 }
