@@ -30,6 +30,9 @@ function GoogleAPIsStrategy(
 
   this.oauth2Client = new google.auth.OAuth2(options.clientID, options.clientSecret,
     options.redirectURL);
+
+    this._scope = options.scope;
+    this._passReqToCallback = options.passReqToCallback;
 };
 
 util.inherits(GoogleAPIsStrategy, passport.Strategy);
@@ -81,8 +84,8 @@ GoogleAPIsStrategy.prototype.authenticate = function(req, options) {
         }
 
         try {
+          var arity = self._verify.length;
           if (self._passReqToCallback) {
-            var arity = self._verify.length;
             if (arity == 6) {
               self._verify(req, accessToken, refreshToken, {}, profile,
                 verified);
@@ -91,12 +94,19 @@ GoogleAPIsStrategy.prototype.authenticate = function(req, options) {
                 verified);
             }
           } else {
-            var arity = self._verify.length;
             if (arity == 5) {
               self._verify(accessToken, refreshToken, {}, profile,
                 verified);
-            } else { // arity == 4
+            } else if (arity == 4) {
               self._verify(accessToken, refreshToken, profile, verified);
+            } else { // arity == 3
+              self._verify({
+                accessToken: tokens.access_token,
+                tokenType: tokens.token_type,
+                idToken: tokens.id_token,
+                refreshToken: tokens.refresh_token || null,
+                expiryDate: tokens.expiry_date
+              }, profile, verified);
             }
           }
         } catch (ex) {
