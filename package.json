@@ -1,6 +1,6 @@
 {
   "name": "passport-googleapis",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Implementation of Google's OAuth Connect endpoints for PassportJS",
   "keywords": [
     "passport",
