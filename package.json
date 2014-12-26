@@ -1,7 +1,15 @@
 {
-  "name": "passport-google-googleapis",
+  "name": "passport-googleapis",
   "version": "1.0.0",
   "description": "Implementation of Google's OAuth Connect endpoints for PassportJS",
+  "keywords": [
+    "passport",
+    "passportjs",
+    "google",
+    "googleapis",
+    "auth",
+    "oauth"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +25,8 @@
   },
   "homepage": "https://github.com/msyea/passport-google-googleapis",
   "dependencies": {
-    "googleapis": "^1.0.21"
+    "googleapis": "^1.0.21",
+    "passport-strategy": "^1.0.0",
+    "util": "^0.10.3"
   }
 }
